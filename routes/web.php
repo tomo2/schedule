@@ -26,3 +26,20 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// 管理者
+Route::prefix('admin')
+->middleware('can:admin')
+->group(function(){
+    Route::get('index', function () {
+        dd('admin');
+    });
+});
+
+// 一般ユーザー
+Route::middleware('can:common')
+->group(function(){
+    Route::get('index', function () {
+        dd('common');
+    });
+});
