@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,19 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+// 管理者
+Route::prefix('admin')
+->middleware('can:admin')
+->group(function(){
+    Route::resource('events', EventController::class);
+});
+
+// 一般ユーザー
+Route::middleware('can:common')
+->group(function(){
+    Route::get('index', function () {
+        dd('common');
+    });
 });
