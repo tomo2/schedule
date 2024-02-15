@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,7 @@ Route::middleware([
 Route::prefix('admin')
 ->middleware('can:admin')
 ->group(function(){
-    Route::get('index', function () {
-        dd('admin');
-    });
+    Route::resource('events', EventController::class);
 });
 
 // 一般ユーザー
