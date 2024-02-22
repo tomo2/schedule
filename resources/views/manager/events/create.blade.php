@@ -29,11 +29,11 @@
                         <div class="mt-4">
                             <x-label for="care" value="care" />
                             <select name="care" class="block mt-1 w-full" type="text" name="start_time" required >
-                                <option value="中身１">1</option>
-                                <option value="中身２">2</option>
-                                <option value="中身３">3</option>
-                                <option value="中身４">4</option>
-                                <option value="中身５">5</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </div>
 

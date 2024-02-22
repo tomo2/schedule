@@ -17,8 +17,8 @@
                             <tr>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">名前</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">数字</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">開始時間</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th>
+                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">時間</th>
+                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th> --}}
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">料金(後ほど)</th>
                             </tr>
                             </thead>
@@ -27,8 +27,8 @@
                                 <tr>
                                     <td class="px-4 py-3">{{ $event->name }}</td>
                                     <td class="px-4 py-3">{{ $event->care }}</td>
-                                    <td class="px-4 py-3">{{ $event->start_date }}</td>
-                                    <td class="px-4 py-3">{{ $event->end_date }}</td>
+                                    <td class="px-4 py-3">{{ $event->date }}</td>
+                                    {{-- <td class="px-4 py-3">{{ $event->end_time }}</td> --}}
                                     <td class="px-4 py-3">0</td>
                                 </tr>                                    
                                 @endforeach

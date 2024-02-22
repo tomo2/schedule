@@ -21,10 +21,10 @@ class EventFactory extends Factory
 
         return [
             'name' => $this->faker->name,
-            'information' => $this->faker->realText,
             'care' => $this->faker->numberBetween(1, 5),
-            'start_date' => $dummyDate->format('Y-m-d H:i:s'),
-            'end_date' => $dummyDate->modify('+1hour')->format('Y-m-d H:i:s')
+            'date' => $dummyDate->format('Y-m-d H:i:s'),
+            'start_time' => $dummyDate->format('Y-m-d H:i:s'),
+            'end_time' => $dummyDate->modify('+3hour')->format('Y-m-d H:i:s'),
         ];
     }
 }
