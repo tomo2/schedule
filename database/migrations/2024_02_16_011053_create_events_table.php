@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('care');
-            $table->datetime('date');
-            $table->datetime('start_time');
-            $table->datetime('end_time');
+            $table->date('date');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
         });
     }

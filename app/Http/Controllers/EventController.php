@@ -21,7 +21,7 @@ class EventController extends Controller
         $events = DB::table('events')
         ->orderBy('date', 'asc')
         ->paginate(10);
-        
+
         return view('manager.events.index', 
         compact('events'));
     }
@@ -44,16 +44,6 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        // Y-m-d H:iの形にしてDBに保存する。
-        // $start = $request['date'] . "" . $request['start_time'];
-        // $startDate = Carbon::createFromFormat(
-        //     'Y-m-d H:i', $start
-        // );
-
-        // $end = $request['date'] . "" . $request['end_time'];
-        // $endDate = Carbon::createFromFormat(
-        //     'Y-m-d H:i', $end
-        // );
 
         Event::create([
             'name' => $request['name'],
