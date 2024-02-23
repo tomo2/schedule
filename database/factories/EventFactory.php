@@ -22,9 +22,9 @@ class EventFactory extends Factory
         return [
             'name' => $this->faker->name,
             'care' => $this->faker->numberBetween(1, 5),
-            'date' => $dummyDate->format('Y-m-d H:i:s'),
-            'start_time' => $dummyDate->format('Y-m-d H:i:s'),
-            'end_time' => $dummyDate->modify('+3hour')->format('Y-m-d H:i:s'),
+            'date' => $dummyDate->format('Y-m-d'),
+            'start_time' => $dummyDate->format('H:i:s'),
+            'end_time' => $dummyDate->modify('+3hour')->format('H:i:s'),
         ];
     }
 }
