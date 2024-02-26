@@ -75,15 +75,13 @@ class EventController extends Controller
         compact('event'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Event $event)
     {
-        //
+        $event = Event::findOrFail($event->id);
+        
+        return view('manager.events.edit', 
+        compact('event'));
     }
 
     /**
