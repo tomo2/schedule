@@ -26,22 +26,13 @@ class EventController extends Controller
         compact('events'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('manager.events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreEventRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(StoreEventRequest $request)
     {
 
@@ -58,12 +49,7 @@ class EventController extends Controller
         return to_route('events.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Event $event)
     {
         $event = Event::findOrFail($event->id);
@@ -84,16 +70,21 @@ class EventController extends Controller
         compact('event'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateEventRequest  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(UpdateEventRequest $request, Event $event)
     {
-        //
+        $event = Event::findOrFail($event->id);
+
+        $event->name = $request['name'];
+        $event->care = $request['care'];
+        $event->date = $request['date'];
+        $event->start_time = $request['start_time'];
+        $event->end_time = $request['end_time'];
+        $event->save();
+
+        session()->flash('status', '更新しました');
+
+        return to_route('events.index');
     }
 
     /**
