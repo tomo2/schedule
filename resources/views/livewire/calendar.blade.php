@@ -1,6 +1,9 @@
 <div>
     カレンダー
-    <x-input id="calendar" class="block mt-1 w-full" type="text" name="calendar" required />
+    <input id="calendar" class="block mt-1 w-full" 
+    type="text" name="calendar" 
+    value="{{ $currentDate }}"
+    wire:change="getDate($event.target.value)"  />
 
     {{ $currentDate }}
 

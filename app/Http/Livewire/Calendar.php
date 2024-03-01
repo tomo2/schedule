@@ -17,11 +17,14 @@ class Calendar extends Component
     public $firstWeek;
     // 先月末の日にち
     public $endLastMonth;
-    
+    // 選択された日付の月末
+    public $choiceMonthLastDay;
     
     public $currentWeek;
     public $day;
 
+
+    // 初期画面
     public function mount()
     {
         // Carbonインスタンス
@@ -42,7 +45,26 @@ class Calendar extends Component
             array_push($this->currentMonth, $this->day);
         }
         // dd($this->firstDay, $this->lastDay, $this->firstWeek, $this->endLastMonth, $this->currentMonth);
+    }
 
+    // ボタン操作後の画面
+    public function getDate($date)
+    {
+        // Carbonインスタンス
+        $dt = new Carbon();
+
+        $this->currentDate = $date; // 選択した日付
+        $this->firstDay = $dt->parse($this->currentDate)->copy()->startOfMonth()->format('Y-m-d'); // 選択月の月初の日にち
+
+        $this->lastDay = $dt->parse($this->currentDate)->copy()->endOfMonth()->format('d'); // 選択された日付の月末
+
+        $this->currentMonth = [];
+        
+        for($i = 0; $i < $this->lastDay; $i++){
+            // 今月の日付を全て繰り返す
+            $this->day = Carbon::parse($this->firstDay)->addDays($i)->format('m月d日');
+            array_push($this->currentMonth, $this->day);
+        }
     }
 
     
