@@ -24,20 +24,24 @@
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
-            <th class="calendar bg-slate-300">日</th>
-            <th class="calendar bg-slate-300">月</th>
-            <th class="calendar bg-slate-300">火</th>
-            <th class="calendar bg-slate-300">水</th>
-            <th class="calendar bg-slate-300">木</th>
-            <th class="calendar bg-slate-300">金</th>
-            <th class="calendar bg-slate-300">土</th>
+            <th class="calendar bg-slate-200">日</th>
+            <th class="calendar bg-slate-200">月</th>
+            <th class="calendar bg-slate-200">火</th>
+            <th class="calendar bg-slate-200">水</th>
+            <th class="calendar bg-slate-200">木</th>
+            <th class="calendar bg-slate-200">金</th>
+            <th class="calendar bg-slate-200">土</th>
         </tr>
         <tr>
             @foreach ($calendar as $key => $calendars)
                 @if($key % 7 == 0)
                     </tr><tr>
                 @endif
-                    <td class="calendar">{{ $calendars }}</td>
+                    <td class="calendar-btn">
+                        <a href="#">
+                            {{ $calendars }}
+                        </a>
+                    </td>
             @endforeach
     </table>
     

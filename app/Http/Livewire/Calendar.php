@@ -80,17 +80,39 @@ class Calendar extends Component
 
         $this->currentDate = $date; // 選択した日付
         $this->firstDay = $dt->parse($this->currentDate)->copy()->startOfMonth()->format('Y-m-d'); // 選択月の月初の日にち
-        $this->lastDay = $dt->parse($this->currentDate)->copy()->endOfMonth()->format('d'); // 選択された日付の月末
+        $this->lastDay = $dt->parse($this->currentDate)->copy()->endOfMonth()->format('d'); // 選択された日付の月末の日
 
-        $this->currentMonth = [];
+        $this->firstWeek = $dt->parse($this->currentDate)->copy()->startOfMonth()->dayOfWeek; // 月初の曜日
+        $this->lastWeek = $dt->parse($this->currentDate)->copy()->endOfMonth()->dayOfWeek; // 月末の曜日
+
+        // 3つの配列を空にする。
+        $this->calendar = [];
+        $this->currentMonth = []; 
+        $this->lastMonth = [];
+        $this->nextMonth = [];
+
+
+        // 先月末の表示される分
+        for($day = 0; $day < $this->firstWeek; $day++){
+            $this->lastMonth[] = "空白";
+        }
+
+        // 来月の表示される分
+        for($day = 0; $day + $this->lastWeek < 6; $day++){
+            $this->nextMonth[] = "空白";
+        }
+
         
         for($i = 0; $i < $this->lastDay; $i++){
-            // 今月の日付を全て繰り返す
+            // 選択した日付を全て繰り返す
             $this->day = Carbon::parse($this->firstDay)->addDays($i)->format('d日');
             array_push($this->currentMonth, $this->day);
         }
 
-        // dd($this->firstDay, $this->lastDay);
+        $this->calendar = array_merge($this->lastMonth, $this->currentMonth, $this->nextMonth);
+
+
+        // dd($this->firstDay, $this->lastDay, $this->currentMonth);
     }
 
     
