@@ -18,5 +18,13 @@
 
 .calendar
 {
+    font-size: 14px;
     border: solid 1px black
+}
+
+.calendar-btn
+{
+    font-size: 20px;
+    border: solid 1px black;
+    color: red;
 }
