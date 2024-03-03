@@ -3,3 +3,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+.event-calendar
+{
+    width: 1000px;
+} */
+
+.calendar-width
+{
+    height: 500px;
+    width: 700px;
+    border: solid 2px black;
+}
+
+.calendar
+{
+    border: solid 1px black
+}
