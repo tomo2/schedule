@@ -11,17 +11,6 @@
 
     {{ $currentDate }}
 
-    {{-- カレンダー --}}
-    {{-- <div class="flex border border-gray-400">
-        @for($day = 0; $day < 42; $day++)
-            @if($day % 7 == 0)
-                <br>
-            @endif
-                {{ $calendar[$day] }}
-        @endfor
-    </div> --}}
-
-
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
             <th class="calendar bg-slate-200">日</th>
