@@ -60,7 +60,7 @@ class Calendar extends Component
 
         // 今月の日付を全て繰り返す
         for($i = 0; $i < $this->lastDay; $i++){
-            $this->day = $dt->copy()->startOfMonth()->addDays($i)->format('d日');
+            $this->day = $dt->copy()->startOfMonth()->addDays($i)->format('d');
             array_push($this->currentMonth, $this->day);
         }
         
@@ -105,7 +105,7 @@ class Calendar extends Component
         
         for($i = 0; $i < $this->lastDay; $i++){
             // 選択した日付を全て繰り返す
-            $this->day = Carbon::parse($this->firstDay)->addDays($i)->format('d日');
+            $this->day = Carbon::parse($this->firstDay)->addDays($i)->format('d');
             array_push($this->currentMonth, $this->day);
         }
 
