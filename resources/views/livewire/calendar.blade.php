@@ -9,7 +9,12 @@
     value="{{ $currentDate }}"
     wire:change="getDate($event.target.value)"  />
 
-    {{ $currentDate }}
+
+    <button type="text"><<</button>
+    
+
+    {{ $dayId }}月
+    <button>>></button>
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -27,12 +32,32 @@
                     </tr><tr>
                 @endif
                     <td class="calendar-btn">
-                        <a href="#">
+                        <a href="{{ $key }}">
                             {{ $calendars }}
                         </a>
                     </td>
             @endforeach
-    </table>
-    
+    </table>    
+
+        
+            @foreach ($lastMonth as $key => $calendars)
+            <td class="calendar-btn">
+                    {{ $calendars }}
+            </td>
+            @endforeach
+
+            @foreach ($currentMonth as $key => $calendars)
+            <td class="calendar-btn">
+                <a href="{{ $calendars }}">
+                    {{ $calendars }}
+                </a>
+            </td>
+            @endforeach
+
+            @foreach ($nextMonth as $key => $calendars)
+            <td class="calendar-btn">
+                    {{ $calendars }}
+            </td>
+            @endforeach
 
 </div>
