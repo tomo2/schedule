@@ -10,8 +10,6 @@
     wire:change="getDate($event.target.value)"  />
 
 
-    <button type="text"><<</button>
-    
 
     {{ $dayId }}月
     <button>>></button>
@@ -31,8 +29,7 @@
                 @if($key % 7 == 0)
                     </tr><tr>
                 @endif
-                    <td class="calendar-btn">
-                        <a href="{{ $key }}">
+
                             {{ $calendars }}
                         </a>
                     </td>
