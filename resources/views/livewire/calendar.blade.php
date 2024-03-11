@@ -11,6 +11,22 @@
 
     {{ $currentDate }}
 
+    <div style="text-align: center">
+        <button wire:click="lastMonth" 
+        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+        >
+            前の月
+        </button>
+        <button wire:click="nextMonth" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+            次の月
+        </button>
+        <br>
+        <div class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" >
+            {{ $dayId }}
+        </div>
+            
+    </div>    
+
     {{-- カレンダー --}}
     {{-- <div class="flex border border-gray-400">
         @for($day = 0; $day < 42; $day++)
@@ -37,8 +53,8 @@
                 @if($key % 7 == 0)
                     </tr><tr>
                 @endif
-                    <td class="calendar-btn">
-                        <a href="#">
+                    <td class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        <a href="route('admin.show')">
                             {{ $calendars }}
                         </a>
                     </td>
