@@ -30,8 +30,6 @@ Route::get('/', function () {
 // });
 
 
-
-
 // 管理者
 Route::prefix('admin')
 ->middleware('can:admin')
@@ -43,5 +41,4 @@ Route::prefix('admin')
 Route::middleware('can:common')
 ->group(function(){
     Route::get('/dashboard', [ReservationController::class, 'dashboard'])->name('dashboard');
-    });
-    
+
