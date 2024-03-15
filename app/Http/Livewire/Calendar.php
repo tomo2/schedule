@@ -21,7 +21,10 @@ class Calendar extends Component
     public $endLastMonth;
     
     // 入力後の日付
+    public $days;
+    // カレンダーのID
     public $dayId;
+
 
 
     public $currentMonth;
@@ -44,7 +47,7 @@ class Calendar extends Component
         $this->lastWeek = $dt->copy()->endOfMonth()->dayOfWeek; // 月末の曜日
         $this->endLastMonth = $dt->copy()->addMonth(-1)->endOfMonth()->format('d'); // 先月末の日にち
 
-        $this->dayId = $this->currentDate->format('Y-m');
+        $this->days = $this->currentDate->format('Y-m');
 
         $this->currentMonth = [];
         $this->lastMonth = [];
@@ -122,7 +125,8 @@ class Calendar extends Component
     public function lastMonth()
     {
         // dayIdを変更、currentDateの中身を変更
-        $this->dayId = $this->currentDate->subMonth(1)->format('Y-m');
+        $this->days = $this->currentDate->subMonth(1)->format('Y-m');
+        // $this->dayId = $this->currentDate->copy()->format('Y-m-d');
 
         // Carbonインスタンス
         $dt = new Carbon();
@@ -166,7 +170,7 @@ class Calendar extends Component
     // 一ヶ月プラスする
     public function nextMonth()
     {
-        $this->dayId = $this->currentDate->addMonth(1)->format('Y-m');
+        $this->days = $this->currentDate->addMonth(1)->format('Y-m');
 
         // Carbonインスタンス
         $dt = new Carbon();
