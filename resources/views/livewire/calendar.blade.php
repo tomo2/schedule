@@ -11,6 +11,7 @@
 
 
 
+
     {{ $dayId }}月
     <button>>></button>
 
@@ -30,8 +31,6 @@
                     </tr><tr>
                 @endif
 
-                            {{ $calendars }}
-                        </a>
                     </td>
             @endforeach
     </table>    
