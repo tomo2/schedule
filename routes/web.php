@@ -41,4 +41,5 @@ Route::prefix('admin')
 Route::middleware('can:common')
 ->group(function(){
     Route::get('/dashboard', [ReservationController::class, 'dashboard'])->name('dashboard');
+});
 
