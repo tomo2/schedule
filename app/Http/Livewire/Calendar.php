@@ -20,9 +20,7 @@ class Calendar extends Component
     // 先月末の日にち
     public $endLastMonth;
     
-    // 入力後の日付
-    public $days;
-    // カレンダーのID
+
     public $dayId;
 
 
@@ -47,7 +45,6 @@ class Calendar extends Component
         $this->lastWeek = $dt->copy()->endOfMonth()->dayOfWeek; // 月末の曜日
         $this->endLastMonth = $dt->copy()->addMonth(-1)->endOfMonth()->format('d'); // 先月末の日にち
 
-        $this->days = $this->currentDate->format('Y-m');
 
         $this->currentMonth = [];
         $this->lastMonth = [];
@@ -213,5 +210,16 @@ class Calendar extends Component
     public function render()
     {
         return view('livewire.calendar');
+    }
+
+    public $count = 0;
+
+    public function month()
+    {
+
+        $this->dayId = $this->currentDate->format('m');
+
+        $this->count++;
+
     }
 }

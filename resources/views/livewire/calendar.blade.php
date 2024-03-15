@@ -9,35 +9,11 @@
     value="{{ $currentDate }}"
     wire:change="getDate($event.target.value)"  />
 
-    {{ $currentDate }}
-
-    <div style="text-align: center">
-        <button wire:click="lastMonth" 
-        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-        >
-            前の月
-        </button>
-        <button wire:click="nextMonth" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-            次の月
-        </button>
-        <br>
-        <div class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" >
-            {{ $days }}
-        </div>
-            
-    </div>    
 
 
-    {{-- カレンダー --}}
-    {{-- <div class="flex border border-gray-400">
-        @for($day = 0; $day < 42; $day++)
-            @if($day % 7 == 0)
-                <br>
-            @endif
-                {{ $calendar[$day] }}
-        @endfor
-    </div> --}}
 
+    {{ $dayId }}月
+    <button>>></button>
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -54,15 +30,30 @@
                 @if($key % 7 == 0)
                     </tr><tr>
                 @endif
-                    <td class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                        <div>
-                            {{-- <a id="{{ $days }}" href="route('')"> --}}
-                                {{ $calendars }}
-                            {{-- </a> --}}
-                        </div>
+
                     </td>
             @endforeach
-    </table>
-    
+    </table>    
+
+        
+            @foreach ($lastMonth as $key => $calendars)
+            <td class="calendar-btn">
+                    {{ $calendars }}
+            </td>
+            @endforeach
+
+            @foreach ($currentMonth as $key => $calendars)
+            <td class="calendar-btn">
+                <a href="{{ $calendars }}">
+                    {{ $calendars }}
+                </a>
+            </td>
+            @endforeach
+
+            @foreach ($nextMonth as $key => $calendars)
+            <td class="calendar-btn">
+                    {{ $calendars }}
+            </td>
+            @endforeach
 
 </div>
