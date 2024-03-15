@@ -13,7 +13,11 @@
 
 
     {{ $dayId }}月
-    <button>>></button>
+
+
+    <button wire:click="lastMonth"><<</button>
+    <button wire:click="nextMonth">>></button>
+
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -31,29 +35,15 @@
                     </tr><tr>
                 @endif
 
-                    </td>
+                <td class="calendar-btn">
+                        {{ $calendars }}
+                </td>
+                    
             @endforeach
+        </tr>
     </table>    
 
         
-            @foreach ($lastMonth as $key => $calendars)
-            <td class="calendar-btn">
-                    {{ $calendars }}
-            </td>
-            @endforeach
 
-            @foreach ($currentMonth as $key => $calendars)
-            <td class="calendar-btn">
-                <a href="{{ $calendars }}">
-                    {{ $calendars }}
-                </a>
-            </td>
-            @endforeach
-
-            @foreach ($nextMonth as $key => $calendars)
-            <td class="calendar-btn">
-                    {{ $calendars }}
-            </td>
-            @endforeach
 
 </div>
