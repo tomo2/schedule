@@ -10,14 +10,19 @@
     wire:change="getDate($event.target.value)"  />
 
 
+<section class>
+    <button wire:click="lastMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+        <<
+    </button>
 
+    3月
 
-    {{ $dayId }}月
-
-
-    <button wire:click="lastMonth"><<</button>
-    <button wire:click="nextMonth">>></button>
-
+    <button wire:click="nextMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+        >>
+    </button>
+</section>
+    
+<a href="#">fdaf</a>
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -34,13 +39,15 @@
                 @if($key % 7 == 0)
                     </tr><tr>
                 @endif
-
-                <td class="calendar-btn">
-                        {{ $calendars }}
-                </td>
+                    <td class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        <a href="{{ route('events.detail', ['id' => $key ]) }}">
+                            {{ $calendars }}
+                        </a>
+                    </td>
                     
             @endforeach
         </tr>
+
     </table>    
 
         
