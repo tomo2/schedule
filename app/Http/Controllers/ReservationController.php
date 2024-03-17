@@ -10,4 +10,9 @@ class ReservationController extends Controller
     {
         return view('dashboard');
     }
+
+    public function detail($id)
+    {
+        return view('event-detail');
+    }
 }

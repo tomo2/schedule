@@ -22,7 +22,7 @@
     </button>
 </section>
     
-
+<a href="#">fdaf</a>
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -39,13 +39,15 @@
                 @if($key % 7 == 0)
                     </tr><tr>
                 @endif
-
-                <td class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                        {{ $calendars }}
-                </td>
+                    <td class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        <a href="{{ route('events.detail', ['id' => $key ]) }}">
+                            {{ $calendars }}
+                        </a>
+                    </td>
                     
             @endforeach
         </tr>
+
     </table>    
 
         
