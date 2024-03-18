@@ -15,7 +15,7 @@
         <<
     </button>
 
-    3月
+    {{ $now }}
 
     <button wire:click="nextMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
         >>
@@ -23,6 +23,7 @@
 </section>
     
 <a href="#">fdaf</a>
+
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -38,9 +39,10 @@
             @foreach ($calendar as $key => $calendars)
                 @if($key % 7 == 0)
                     </tr><tr>
+                        {{ $key }}
                 @endif
-                    <td class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                        <a href="{{ route('events.detail', ['id' => $key ]) }}">
+                    <td id="{{ $currentDate }}{{ $key }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        <a href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}">
                             {{ $calendars }}
                         </a>
                     </td>
@@ -50,7 +52,7 @@
 
     </table>    
 
-        
+
 
 
 </div>
