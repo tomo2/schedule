@@ -9,6 +9,8 @@ class Calendar extends Component
 {
     // 今日の日付
     public $currentDate;
+    // 表示用
+    public $now;
     // 月初の日にち
     public $firstDay;
     // 今月末の日にち
@@ -39,6 +41,7 @@ class Calendar extends Component
         $dt = new Carbon();
 
         $this->currentDate = $dt->today(); // 今日の日付
+        $this->now = $dt->copy()->format('Y-m'); // 表示用
         $this->firstDay = $dt->copy()->startOfMonth()->format('d'); // 月初の日にち
         $this->lastDay = $dt->copy()->endOfMonth()->format('d'); // 月末の日にち
         $this->firstWeek = $dt->copy()->startOfMonth()->dayOfWeek; // 月初の曜日
@@ -75,13 +78,12 @@ class Calendar extends Component
 
 
 
-    
+
     // 一ヶ月マイナスする
     public function lastMonth()
     {
         // dayIdを変更、currentDateの中身を変更
-        $this->days = $this->currentDate->subMonth(1)->format('Y-m');
-        // $this->dayId = $this->currentDate->copy()->format('Y-m-d');
+        $this->now = $this->currentDate->subMonth(1)->format('Y-m');
 
         // Carbonインスタンス
         $dt = new Carbon();
@@ -125,8 +127,7 @@ class Calendar extends Component
     // 一ヶ月プラスする
     public function nextMonth()
     {
-        $this->days = $this->currentDate->addMonth(1)->format('Y-m');
-
+        $this->now = $this->currentDate->addMonth(1)->format('Y-m');
         // Carbonインスタンス
         $dt = new Carbon();
 
