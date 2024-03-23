@@ -20,37 +20,40 @@
                 {{-- <form method="form" action="{{ route('events.edit', ['event' => $event->id ]) }}"> --}}
                     {{-- nameでflatpickrを利用 --}}
 
+                    @if ($events)
+
+                    @foreach ($events as $event)
+                        <div class="md:flex justify-around p-2 m-5 border border-blue-500">
+                            <div>
+                                <x-label for="name" value="名前" />
+                                {{ $event->name }}
+                            </div>
+                                <div class="mt-4">
+                                    <x-label for="care" value="care" />
+                                    {{ $event->care }}
+                                </div>
+    
+                                <div class="mt-4">
+                                    <x-label for="date" value="利用日" />
+                                    {{ $event->date }}
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <x-label for="start_time" value="開始時間" />
+                                    {{ $event->start_time }}
+                                </div>
+                                <div class="mt-4">
+                                    <x-label for="end_time" value="終了時間" />
+                                    {{ $event->end_time}}
+                                </div>
+                            </div>
+                    @endforeach
                     
-                    <div>
-                        <x-label for="name" value="名前" />
-                        {{ $events->name }}
-                    </div>
-                        <div class="mt-4">
-                            <x-label for="care" value="care" />
-                            {{ $events->care }}
-                        </div>
+                    @else
 
-                    <div class="md:flex justify-between">
-                        <div class="mt-4">
-                            <x-label for="date" value="利用日" />
-                            {{ $events->date }}
-                        </div>
-                        
-                        <div class="mt-4">
-                            <x-label for="start_time" value="開始時間" />
-                            {{ $events->start_time }}
-                        </div>
-                        <div class="mt-4">
-                            <x-label for="end_time" value="終了時間" />
-                            {{ $events->end_time}}
-                        </div>
+                    @endif
 
-                    </div>
-
-                    {{ $events }}
-
-
-                    予約なし<br>
+                    {{-- {{ $events }} --}}
 
                     <x-button class="ml-4 mt-4">
                         編集する
