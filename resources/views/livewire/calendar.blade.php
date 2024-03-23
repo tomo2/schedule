@@ -10,7 +10,7 @@
     wire:change="getDate($event.target.value)"  />
 
 
-<section class>
+<section class="text-center">
     <button wire:click="lastMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
         <<
     </button>
@@ -21,9 +21,10 @@
         >>
     </button>
 </section>
-    
-<a href="#">fdaf</a>
 
+{{ $events }}
+
+    
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -39,14 +40,14 @@
             @foreach ($calendar as $key => $calendars)
                 @if($key % 7 == 0)
                     </tr><tr>
-                        {{ $key }}
                 @endif
-                    <td id="{{ $currentDate }}{{ $key }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                        <a href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}">
+
+                    <td class="bg-red hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        <a href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}"> 
                             {{ $calendars }}
                         </a>
                     </td>
-                    
+
             @endforeach
         </tr>
 

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Carbon\Carbon;
+use App\Models\Event;
 
 class Calendar extends Component
 {
@@ -22,10 +23,10 @@ class Calendar extends Component
     // 先月末の日にち
     public $endLastMonth;
     
-
     public $dayId;
 
 
+    public $events;        
 
     public $currentMonth;
     public $day;
@@ -36,7 +37,7 @@ class Calendar extends Component
 
     // 初期画面
     public function mount()
-    {
+    {   
         // Carbonインスタンス
         $dt = new Carbon();
 
@@ -82,6 +83,7 @@ class Calendar extends Component
     // 一ヶ月マイナスする
     public function lastMonth()
     {
+
         // dayIdを変更、currentDateの中身を変更
         $this->now = $this->currentDate->subMonth(1)->format('Y-m');
 
@@ -127,6 +129,7 @@ class Calendar extends Component
     // 一ヶ月プラスする
     public function nextMonth()
     {
+
         $this->now = $this->currentDate->addMonth(1)->format('Y-m');
         // Carbonインスタンス
         $dt = new Carbon();

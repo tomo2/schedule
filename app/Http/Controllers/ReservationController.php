@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class ReservationController extends Controller
 {
@@ -13,6 +14,8 @@ class ReservationController extends Controller
 
     public function detail($id)
     {
-        return view('event-detail');
+        $events = Event::where('date', $id)->first();
+
+        return view('event-detail', compact('events'));
     }
 }
