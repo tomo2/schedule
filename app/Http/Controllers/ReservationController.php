@@ -14,7 +14,7 @@ class ReservationController extends Controller
 
     public function detail($id)
     {
-        $events = Event::where('date', $id)->first();
+        $events = Event::where('date', $id)->get();
 
         return view('event-detail', compact('events'));
     }
