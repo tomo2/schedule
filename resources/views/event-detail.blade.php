@@ -17,12 +17,13 @@
                     </div>
                 @endif
         
-                {{-- <form method="form" action="{{ route('events.edit', ['event' => $event->id ]) }}"> --}}
-                    {{-- nameでflatpickrを利用 --}}
-
-                    @if ($events)
-
-                    @foreach ($events as $event)
+                {{-- nameでflatpickrを利用 --}}
+                
+                @if ($events)
+                
+                @foreach ($events as $event)
+                <form method="form" action="{{ route('events.reserve', ['id' => $event->id ]) }}">
+                    @csrf
                         <div class="md:flex justify-around p-2 m-5 border border-blue-500">
                             <div>
                                 <x-label for="name" value="名前" />
@@ -47,17 +48,20 @@
                                     {{ $event->end_time}}
                                 </div>
                             </div>
-                    @endforeach
-                    
-                    @else
 
-                    @endif
-
+                            <input type="hidden" name="id" value="{{ $event->id }}">
+                        </form>
+                        @endforeach
+                        
+                        @else
+                        
+                        @endif
+                        
+                        <x-button class="ml-4 mt-4">
+                            編集する
+                        </x-button>
                     {{-- {{ $events }} --}}
 
-                    <x-button class="ml-4 mt-4">
-                        編集する
-                    </x-button>
                 {{-- </form> --}}
             </div>
             </div>
