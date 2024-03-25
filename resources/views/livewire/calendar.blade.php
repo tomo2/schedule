@@ -1,16 +1,16 @@
 <div>
     <div class="text-centerv text-sm">
-        日付を選択して下さい。本日から最大30日先まで選択可能です。
+        日付を選択して下さい。
     </div>
 
     {{-- 日付選択 --}}
-    <input id="calendar" class="block mt-1 mx-auto" 
+    {{-- <input id="calendar" class="block mt-1 mx-auto" 
     type="text" name="calendar" 
     value="{{ $currentDate }}"
-    wire:change="getDate($event.target.value)"  />
+    wire:change="getDate($event.target.value)"  /> --}}
 
 
-<section class="text-center">
+<section class="text-center pt-8">
     <button wire:click="lastMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
         <<
     </button>
