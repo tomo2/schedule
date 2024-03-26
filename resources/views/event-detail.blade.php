@@ -1,8 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $date->date }}の予定
-        </h2>
+        @if ($date)
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ $date->date }}の予定
+            </h2>
+        @else
+            予定なし
+        @endif
     </x-slot>
 
     <div class="py-12">
