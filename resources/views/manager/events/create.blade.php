@@ -37,7 +37,7 @@
                             </select>
                         </div>
 
-                        <div class="md:flex justify-between">
+                        {{-- <div class="md:flex justify-between"> --}}
                         <div class="mt-4">
                             <x-label for="date" value="利用日" />
                             <x-input id="date" class="block mt-1 w-full" type="text" name="date" required />
@@ -52,7 +52,14 @@
                             <x-input id="end_time" class="block mt-1 w-full" type="text" name="end_time" required />
                         </div>
 
-                    </div>
+                        
+
+                        <div class="mt-4">
+                            <x-label for="price" value="料金" />
+                            <x-input" id="price" class="block mt-1 w-full" type="text" name="price" required />
+                        </div>
+
+                        {{-- </div> --}}
 
                     <x-button class="ml-4 mt-4">
                         新規登録

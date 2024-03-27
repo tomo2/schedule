@@ -17,6 +17,7 @@ class Event extends Model
         'date',
         'start_time',
         'end_time',
+        // 'price',
     ];
 
     // なぜかsをつけないとうまく表示されない!!!!
