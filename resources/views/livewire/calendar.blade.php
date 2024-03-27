@@ -42,7 +42,7 @@
                     </tr><tr>
                 @endif
 
-                    <td class="bg-red hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    <td class="bg-blue hover:bg-gray-100 text-gray-800 font-semibold py-8 px-14 border border-gray-400 rounded shadow">
                         <a href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}"> 
                             {{ $calendars }}
                         </a>
