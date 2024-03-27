@@ -9,17 +9,18 @@
     width: 1000px;
 } */
 
-.calendar-width
+/* .calendar-width
 {
     height: 500px;
     width: 700px;
     border: solid 2px black;
-}
+} */
 
 .calendar
 {
-    font-size: 14px;
-    border: solid 1px black
+    font-size: 20px;
+    border: solid 1px black;
+    padding: 4px;
 }
 
 .calendar-btn
