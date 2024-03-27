@@ -29,6 +29,7 @@ class EventController extends Controller
 
     public function create()
     {
+        
         return view('manager.events.create');
     }
 
