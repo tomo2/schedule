@@ -16,8 +16,25 @@ class Calculation extends Component
     public $totalPrice;
 
 
+    public function mount()
+    {
+        $this->startTime = 1;
+
+    }
+
     public function render()
     {
-        return view('calculation');
+        $this->startTime = [];
+
+
+        return view('livewire.calculation');
     }
+
+    public function updated($property)
+    {
+        
+        $this->startTime($propety);
+    }
+
+
 }

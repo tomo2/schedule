@@ -19,9 +19,6 @@ Route::get('/', function () {
     return view('calendar');
 });
 
-Route::get('/11', function () {
-    return view('livewire.calculation');
-});
 
 // Route::middleware([
 //     'auth:sanctum',
