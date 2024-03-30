@@ -14,12 +14,13 @@
                 <div class="mb-4 font-medium text-sm text-green-600">
                     {{ session('status') }}
                 </div>
-            @endif
-    
-            <form method="POST" action="{{ route('events.store') }}">
-                @csrf
-                {{-- nameでflatpickrを利用 --}}
-                <div>
+                @endif
+                
+                <form method="POST" action="{{ route('events.store') }}">
+                    @csrf
+                    {{-- nameでflatpickrを利用 --}}
+                    <div class="mx-auto w-2/3">
+                <div class="mt-12">
                     <x-label for="name" value="名前" />
                     <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
 
@@ -36,35 +37,46 @@
                         </select>
                     </div>
 
-                    {{-- <div class="md:flex justify-between"> --}}
                     <div class="mt-4">
                         <x-label for="date" value="利用日" />
-                        <x-input id="date" class="block mt-1 w-full" type="text" name="date" required />
+                        <x-input id="date" class=" block mt-1 w-1/3" type="text" name="date" required />
                     </div>
                     
-                    <div class="mt-4">
-                        <x-label for="start_time" value="開始時間" />
-                        <x-input id="start_time" class="block mt-1 w-full" type="text" name="start_time" required />
+                    <div class="flex justify-around">
+                        <div class="mt-4">
+                            <x-label for="start_time" value="開始時間" />
+                            <x-input id="start_time" class="block mt-1 w-full" type="text" name="start_time" required />
+                        </div>
+                        <div class="mt-4">
+                            <x-label for="end_time" value="終了時間" />
+                            <x-input id="end_time" class="block mt-1 w-full" type="text" name="end_time" required />
+                        </div>
                     </div>
-                    <div class="mt-4">
-                        <x-label for="end_time" value="終了時間" />
-                        <x-input id="end_time" class="block mt-1 w-full" type="text" name="end_time" required />
-                    </div>
+                    
+                    {{-- 料金の計算を行い表示する --}}
+                    
+                </div>
+                
+                <x-button class="mx-auto mt-8">
+                    新規登録
+                </x-button>
+                
+                <div class="mt-4">
+                    <x-label for="price" value="料金" />
+                    <x-input value="{{ $name }}" id="price" class="block mt-1 w-full" type="text" name="price" required />
+                </div>
+                
+                <div class="mt-4">
+                    <input wire:key="name" type="text">{{ $name }}さん
+                </div>
+                
+                <button wire:click="sample()">ボタン</button><br>
+                
+                {{ $totalPrice }}
+                
+            </form>
 
-                    <div class="mt-4">
-                        <x-label for="price" value="料金" />
-                        <x-input" id="price" class="block mt-1 w-full" type="text" name="price" required />
-                    </div>
-
-@foreach($startTime as $startTimes)
-    123
-@endforeach
-
-                    <x-button class="ml-4 mt-4">
-                        新規登録
-                    </x-button>
-                </form>
-            </div>
+        </div>
         </div>
     </div>
 </div>
@@ -72,3 +84,5 @@
 
 </body>
 </html>
+
+
