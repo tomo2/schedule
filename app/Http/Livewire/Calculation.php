@@ -7,29 +7,22 @@ use Livewire\Component;
 class Calculation extends Component
 {
 
-    public $care = [1,2,3,4,5];
-    //
-    public $startTime;
-    public $endTime;
-    public $totalTime;
+    public $price;
 
-    public $totalPrice = 1;
-
-    public $name = '';
 
     public function mount()
     {
+        $this->price = 12;
+    }
 
+
+    public function number()
+    {
+        $this->price = 10;
     }
 
     public function render()
     {
         return view('livewire.calculation');
     }
-
-    public function sample()
-    {
-        $this->name = 2;
-    }
-
 }
