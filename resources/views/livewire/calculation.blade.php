@@ -1,9 +1,3 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -63,16 +57,12 @@
                 
                 <div class="mt-4">
                     <x-label for="price" value="料金" />
-                    <x-input value="{{ $name }}" id="price" class="block mt-1 w-full" type="text" name="price" required />
+                    <x-input value="{{ $price }}" id="price" class="block mt-1 w-full" type="text" name="price" required />
                 </div>
-                
-                <div class="mt-4">
-                    <input wire:key="name" type="text">{{ $name }}さん
+
+                <div>
+                    <button wire:click="number">出力</button>
                 </div>
-                
-                <button wire:click="sample()">ボタン</button><br>
-                
-                {{ $totalPrice }}
                 
             </form>
 
@@ -81,8 +71,5 @@
     </div>
 </div>
 
-
-</body>
-</html>
 
 
