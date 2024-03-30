@@ -5,8 +5,6 @@
         </h2>
     </x-slot>
 
-
-            @livewire('calculation')
-
+    @livewire('calculation')
 
 </x-app-layout>
