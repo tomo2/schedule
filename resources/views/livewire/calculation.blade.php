@@ -52,6 +52,7 @@
                 </div>
                 
                 {{-- buttonを指定することでformに影響を与えない --}}
+                <x-label for="date" value="利用時間" />
                 <table class="mx-auto mt-4 border border-black">
                     <thead>
                         <tr>
@@ -112,10 +113,9 @@
                         </tr>
                     </tbody>
                 </table>
-                
                 <div class="mx-auto w-2/3 mt-4">
                     <x-label for="price" value="料金" />
-                    <x-input value="{{ $care }}" id="care" class="block mt-1 w-full" type="text" name="price" required />
+                    <x-input value="{{ $care }}" id="price" class="block mt-1 w-full" type="text" name="price" required />
                 </div>
 
                 <div class="mt-8 mx-auto w-1/6">

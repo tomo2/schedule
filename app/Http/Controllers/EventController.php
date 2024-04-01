@@ -39,10 +39,11 @@ class EventController extends Controller
 
         Event::create([
             'name' => $request['name'],
-            'care' => $request['care'],
+            // 'care' => $request['care'],
             'date' => $request['date'],
-            'start_time' => $request['start_time'],
-            'end_time' => $request['end_time'],
+            'price' => $request['price']
+            // 'start_time' => $request['start_time'],
+            // 'end_time' => $request['end_time'],
         ]);
 
         session()->flash('status', '登録okです');
@@ -77,10 +78,11 @@ class EventController extends Controller
         $event = Event::findOrFail($event->id);
 
         $event->name = $request['name'];
-        $event->care = $request['care'];
+        // $event->care = $request['care'];
         $event->date = $request['date'];
-        $event->start_time = $request['start_time'];
-        $event->end_time = $request['end_time'];
+        $event->price = $request['price'];
+        // $event->start_time = $request['start_time'];
+        // $event->end_time = $request['end_time'];
         $event->save();
 
         session()->flash('status', '更新しました');

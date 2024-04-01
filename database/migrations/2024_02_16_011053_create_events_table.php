@@ -16,15 +16,12 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('care');
             $table->date('date');
-            $table->time('start_time');
-            $table->time('end_time');
-            // $table->integer('price');
+            $table->integer('price');
 
-            // $table->dateTime('date');
-            // $table->dateTime('start_time');
-            // $table->dateTime('end_time');
+            // $table->string('care');
+            // $table->time('start_time');
+            // $table->time('end_time');
 
             $table->timestamps();
         });
