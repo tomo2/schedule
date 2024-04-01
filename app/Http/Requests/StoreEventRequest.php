@@ -26,8 +26,9 @@ class StoreEventRequest extends FormRequest
         return [
             'name' => ['required', 'max:30'],
             'date' => ['required', 'date'],
-            'start_time' => ['required'],
-            'end_time' => ['required', 'after:start_time'],
+            'price' => ['required'],
+            // 'start_time' => ['required'],
+            // 'end_time' => ['required', 'after:start_time'],
         ];
     }
 }

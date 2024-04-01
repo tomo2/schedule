@@ -22,10 +22,10 @@
                             <thead>
                             <tr>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">名前</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">数字</th>
+                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">数字</th> --}}
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">利用日</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">開始時間</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th>
+                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">開始時間</th> --}}
+                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th> --}}
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">料金(後ほど)</th>
                             </tr>
                             </thead>
@@ -33,11 +33,11 @@
                                 @foreach ($events as $event)
                                 <tr>
                                     <td class="text-blue-400 px-4 py-3"><a href="{{ route('events.show', [ 'event' => $event->id ])}}">{{ $event->name }}</td></a>
-                                    <td class="px-4 py-3">{{ $event->care }}</td>
+                                    {{-- <td class="px-4 py-3">{{ $event->care }}</td> --}}
                                     <td class="px-4 py-3">{{ $event->date }}</td>
-                                    <td class="px-4 py-3">{{ $event->start_time }}</td>
-                                    <td class="px-4 py-3">{{ $event->end_time }}</td>
-                                    <td class="px-4 py-3">0</td>
+                                    {{-- <td class="px-4 py-3">{{ $event->start_time }}</td> --}}
+                                    {{-- <td class="px-4 py-3">{{ $event->end_time }}</td> --}}
+                                    <td class="px-4 py-3">{{ $event->price }}</td>
                                 </tr>                                    
                                 @endforeach
 
