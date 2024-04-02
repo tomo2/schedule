@@ -23,27 +23,27 @@
                         <x-label for="name" value="名前" />
                         {{ $event->name }}
                     </div>
-                        <div class="mt-4">
-                            <x-label for="care" value="care" />
-                            {{ $event->care }}
-                        </div>
-
-                        <div class="md:flex justify-between">
+                    
+                    {{-- <div class="md:flex justify-between"> --}}
                         <div class="mt-4">
                             <x-label for="date" value="利用日" />
                             {{ $event->date }}
                         </div>
                         
                         <div class="mt-4">
+                            <x-label for="price" value="price" />
+                            {{ $event->price }}
+                        </div>
+                        {{-- <div class="mt-4">
                             <x-label for="start_time" value="開始時間" />
                             {{ $event->start_time }}
                         </div>
                         <div class="mt-4">
                             <x-label for="end_time" value="終了時間" />
                             {{ $event->end_time}}
-                        </div>
+                        </div> --}}
 
-                    </div>
+                    {{-- </div> --}}
 
                     <x-button class="ml-4 mt-4">
                         編集する
