@@ -56,21 +56,18 @@
                     <x-label for="time" value="利用時間" />
                 </div>
 
-                    <table class="bg-gray-200 mx-auto px-6 py-4">
-                        <thead>
+                    <table class="mx-auto">
                             <tr class="text-sm">
                                 <th></th>
-                                <th>3-4時間</th>
-                                <th>4-5時間</th>
-                                <th>5-6時間</th>
-                                <th>6-7時間</th>
-                                <th>7-8時間</th>
-                                <th>8-9時間</th>
+                                <th class="pt-4 ">3-4時間</th>
+                                <th class="pt-4">4-5時間</th>
+                                <th class="pt-4">5-6時間</th>
+                                <th class="pt-4">6-7時間</th>
+                                <th class="pt-4">7-8時間</th>
+                                <th class="pt-4">8-9時間</th>
                             </tr>
-                        </thead>
-                        <tbody>
                             <tr>
-                                <td class="px-4 text-sm">要介護1</td>
+                                <td class="px-4 text-xs">要介護1</td>
                                 <td><x-button2 type="button" wire:click="number13">要介護1 3~4時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number14">要介護1 4~5時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number15">要介護1 5~6時間</x-button2></td>
@@ -79,7 +76,7 @@
                                 <td><x-button2 type="button" wire:click="number18">要介護1 8~9時間</x-button2></td>
                             </tr>
                             <tr>
-                                <td class="px-4 text-sm">要介護2</td>
+                                <td class="px-4 text-xs">要介護2</td>
                                 <td><x-button2 type="button" wire:click="number23">要介護2 3~4時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number24">要介護2 4~5時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number25">要介護2 5~6時間</x-button2></td>
@@ -88,7 +85,7 @@
                                 <td><x-button2 type="button" wire:click="number28">要介護2 8~9時間</x-button2></td>
                             </tr>
                             <tr>
-                                <td class="px-4 text-sm">要介護3</td>
+                                <td class="px-4 text-xs">要介護3</td>
                                 <td><x-button2 type="button" wire:click="number33">要介護3 3~4時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number34">要介護3 4~5時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number35">要介護3 5~6時間</x-button2></td>
@@ -97,7 +94,7 @@
                                 <td><x-button2 type="button" wire:click="number38">要介護3 8~9時間</x-button2></td>
                             </tr>
                             <tr>
-                                <td class="px-4 text-sm">要介護4</td>
+                                <td class="px-4 text-xs">要介護4</td>
                                 <td><x-button2 type="button" wire:click="number43">要介護4 3~4時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number44">要介護4 4~5時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number45">要介護4 5~6時間</x-button2></td>
@@ -106,7 +103,7 @@
                                 <td><x-button2 type="button" wire:click="number48">要介護4 8~9時間</x-button2></td>
                             </tr>
                             <tr>
-                                <td class="px-4 text-sm">要介護5</td>
+                                <td class="px-4 text-xs">要介護5</td>
                                 <td><x-button2 type="button" wire:click="number53">要介護5 3~4時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number54">要介護5 4~5時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number55">要介護5 5~6時間</x-button2></td>
@@ -114,7 +111,6 @@
                                 <td><x-button2 type="button" wire:click="number57">要介護5 7~8時間</x-button2></td>
                                 <td><x-button2 type="button" wire:click="number58">要介護5 8~9時間</x-button2></td>
                             </tr>
-                        </tbody>
                     </table>
 
                 <div class="mx-auto w-2/3 mt-4">
