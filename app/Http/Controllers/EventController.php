@@ -39,11 +39,11 @@ class EventController extends Controller
 
         Event::create([
             'name' => $request['name'],
-            // 'care' => $request['care'],
+            'care' => $request['care'],
             'date' => $request['date'],
-            'price' => $request['price']
-            // 'start_time' => $request['start_time'],
-            // 'end_time' => $request['end_time'],
+            'start_time' => $request['start_time'],
+            'end_time' => $request['end_time'],
+            'price' => $request['price'],
         ]);
 
         session()->flash('status', '登録okです');

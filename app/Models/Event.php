@@ -13,10 +13,10 @@ class Event extends Model
 
     protected $fillable = [
         'name',
-        // 'care',
+        'care',
         'date',
-        // 'start_time',
-        // 'end_time',
+        'start_time',
+        'end_time',
         'price',
     ];
 
