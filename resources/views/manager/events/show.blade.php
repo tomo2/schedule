@@ -34,14 +34,14 @@
                             <x-label for="price" value="price" />
                             {{ $event->price }}
                         </div>
-                        {{-- <div class="mt-4">
+                        <div class="mt-4">
                             <x-label for="start_time" value="開始時間" />
                             {{ $event->start_time }}
                         </div>
                         <div class="mt-4">
                             <x-label for="end_time" value="終了時間" />
                             {{ $event->end_time}}
-                        </div> --}}
+                        </div>
 
                     {{-- </div> --}}
 
