@@ -19,21 +19,23 @@
         
                 <form method="form" action="{{ route('events.edit', ['event' => $event->id ]) }}">
                     {{-- nameでflatpickrを利用 --}}
-                    <div>
-                        <x-label for="name" value="名前" />
-                        {{ $event->name }}
-                    </div>
                     
-                    {{-- <div class="md:flex justify-between"> --}}
+                    <div class="mx-20">
+                        <div class="mt-10">
+                            <x-label for="name" value="名前" />
+                                {{ $event->name }}
+                        </div>
+
+                        <div class="mt-4">
+                                <x-label for="care" value="介護度" />
+                            {{ $event->care }}
+                        </div>
+                    
                         <div class="mt-4">
                             <x-label for="date" value="利用日" />
                             {{ $event->date }}
                         </div>
                         
-                        <div class="mt-4">
-                            <x-label for="price" value="price" />
-                            {{ $event->price }}
-                        </div>
                         <div class="mt-4">
                             <x-label for="start_time" value="開始時間" />
                             {{ $event->start_time }}
@@ -42,6 +44,11 @@
                             <x-label for="end_time" value="終了時間" />
                             {{ $event->end_time}}
                         </div>
+                        <div class="mt-4">
+                            <x-label for="price" value="料金" />
+                            {{ $event->price }}
+                        </div>
+                    </div>
 
                     {{-- </div> --}}
 

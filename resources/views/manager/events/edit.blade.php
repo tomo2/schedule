@@ -24,33 +24,33 @@
                         @method('put')
                         {{-- nameでflatpickrを利用 --}}
                         <div class="mx-auto w-2/3">
-                    <div class="mt-12">
-                        <x-label for="name" value="名前" />
-                        <x-input value="{{ $event->name }}" id="name" class="block mt-1 w-full" type="text" name="name" required autofocus />
-                        </div>
+                            <div class="mt-12">
+                                <x-label for="name" value="名前" />
+                                <x-input value="{{ $event->name }}" id="name" class="block mt-1 w-full" type="text" name="name" required autofocus />
+                            </div>
 
-                        <div class="mt-4">
-                            <x-label for="care" value="介護度" />
-                            <x-input value="{{ $event->care }}" id="care" class=" block mt-1 w-1/3" type="text" name="care" required />
-                        </div>
+                            <div class="mt-4">
+                                <x-label for="care" value="介護度" />
+                                <x-input value="{{ $event->care }}" id="care" class=" block mt-1 w-1/3" type="text" name="care" required />
+                            </div>
 
-                        <div class="mt-4">
-                            <x-label for="date" value="利用日" />
-                            <x-input value="{{ $event->date }}" id="date" class=" block mt-1 w-1/3" type="text" name="date" required />
+                            <div class="mt-4">
+                                <x-label for="date" value="利用日" />
+                                <x-input value="{{ $event->date }}" id="date" class=" block mt-1 w-1/3" type="text" name="date" required />
+                            </div>
                         </div>
-                    </div>
  
-                    <div class="flex justify-around">
-                        <div class="mt-4">
-                            <x-label for="start_time" value="開始時間" />
-                            <x-input value="{{ $event->start_time }}" id="start_time" class="block mt-1 w-full" type="text" name="start_time" required />
-                        </div>
+                        <div class="flex justify-around">
+                            <div class="mt-4">
+                                <x-label for="start_time" value="開始時間" />
+                                <x-input value="{{ $event->start_time }}" id="start_time" class="block mt-1 w-full" type="text" name="start_time" required />
+                            </div>
 
-                        <div class="mt-4">
-                            <x-label for="end_time" value="終了時間" />
-                            <x-input value="{{ $event->end_time }}" id="end_time" class="block mt-1 w-full" type="text" name="end_time" required />
+                            <div class="mt-4">
+                                <x-label for="end_time" value="終了時間" />
+                                <x-input value="{{ $event->end_time }}" id="end_time" class="block mt-1 w-full" type="text" name="end_time" required />
+                            </div>
                         </div>
-                    </div>
                     
                     {{-- 料金の計算を行い表示する --}}
 

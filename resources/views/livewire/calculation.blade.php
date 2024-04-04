@@ -20,23 +20,23 @@
 
                 </div>
 
-                    {{-- <div class="mt-4">
-                        <x-label for="care" value="care" />
-                        <select name="care" class="block mt-1 w-full" type="text" name="start_time" required >
+                    <div class="mt-4">
+                        <x-label for="care" value="介護度" />
+                        <select name="care" class="block mt-1 w-1/3" type="text" name="start_time" required >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                    </div> --}}
+                    </div>
 
                     <div class="mt-4">
                         <x-label for="date" value="利用日" />
                         <x-input id="date" class=" block mt-1 w-1/3" type="text" name="date" required />
                     </div>
                     
-                    {{-- <div class="flex justify-around">
+                    <div class="flex justify-around">
                         <div class="mt-4">
                             <x-label for="start_time" value="開始時間" />
                             <x-input id="start_time" class="block mt-1 w-full" type="text" name="start_time" required />
@@ -45,7 +45,7 @@
                             <x-label for="end_time" value="終了時間" />
                             <x-input id="end_time" class="block mt-1 w-full" type="text" name="end_time" required />
                         </div>
-                    </div> --}}
+                    </div>
                     
                     {{-- 料金の計算を行い表示する --}}
                     
