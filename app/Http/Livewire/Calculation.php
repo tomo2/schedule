@@ -24,8 +24,6 @@ class Calculation extends Component
 
 
 
-
-
     public function number13() { $this->care = 368; }
     public function number14() { $this->care = 386; }
     public function number15() { $this->care = 567; }
