@@ -94,7 +94,7 @@
                                                 <td class="px-4 py-3">{{ $event->date }}</td>
                                                 <td class="px-4 py-3">{{ $event->start_time }}</td>
                                                 <td class="px-4 py-3">{{ $event->end_time }}</td>
-                                                <td class="px-4 py-3">0</td>
+                                                <td class="px-4 py-3">{{ $event->price }}</td>
                                             </tr>                                    
                                             @endforeach
             

@@ -25,8 +25,10 @@ class Calendar extends Component
     
     public $dayId;
 
-
-    public $events;        
+    // DB接続
+    public $events;
+    public $eventsId;
+    public $eventsSum;
 
     public $currentMonth;
     public $day;
@@ -74,7 +76,15 @@ class Calendar extends Component
         $this->calendar = array_merge($this->lastMonth, $this->currentMonth, $this->nextMonth);
         
         
-        // dd($this->firstDay, $this->lastDay, $this->firstWeek, $this->lastWeek, $this->endLastMonth, $this->currentMonth, $this->lastMonth, $this->nextMonth, $this->calendar);
+
+        // DBの値を取得
+
+        $this->events = Event::get();
+        $this->eventsId = Event::select('date')->get();
+        
+
+        $this->eventsSum = Event::pluck('price');
+
     }
 
 
@@ -121,7 +131,7 @@ class Calendar extends Component
         }
 
         $this->calendar = array_merge($this->lastMonth, $this->currentMonth, $this->nextMonth);
-
+        
     }
     
 

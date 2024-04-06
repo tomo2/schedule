@@ -22,9 +22,10 @@
     </button>
 </section>
 
-{{ $events }}
 
-    
+{{-- {{ $events }} --}}
+
+
 
     <table class="text-center mx-auto my-20 calendar-width">
         <tr>
@@ -42,18 +43,28 @@
                     </tr><tr>
                 @endif
 
-                    <td class="bg-blue hover:bg-gray-100 text-gray-800 font-semibold py-8 px-14 border border-gray-400 rounded shadow">
-                        <a href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}"> 
+                    <td class="hover:bg-gray-200 text-gray-800 font-semibold py-8 px-14 border border-gray-400 rounded shadow">
+                        <a class="text-red-400 text-xl" href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}"> 
                             {{ $calendars }}
                         </a>
+                        {{-- イベントのある日付を取得 --}}
+                            @foreach ($events as $event)
+                                @if ($event->date == $now. "-" . $calendars)
+                                    <div class="absolute text-blue-500 text-xs">
+                                        <br>{{ $event->price }}
+                                    </div>
+                                @endif
+                            @endforeach
+                            
                     </td>
 
-            @endforeach
-        </tr>
-
-    </table>    
-
-
+                        @endforeach
+                    </tr>
+                    
+                </table>    
+                
+                
+                {{ $eventsSum }}
 
 
 </div>
