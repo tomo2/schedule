@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-4">
+    <div class="py-8">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <section class="text-gray-600 body-font">
@@ -22,7 +22,7 @@
                             <thead>
                             <tr>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">名前</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">数字</th>
+                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">介護度</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">利用日</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">開始時間</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th>
@@ -37,15 +37,15 @@
                                     <td class="px-4 py-3">{{ $event->date }}</td>
                                     <td class="px-4 py-3">{{ $event->start_time }}</td>
                                     <td class="px-4 py-3">{{ $event->end_time }}</td>
-                                    <td class="px-4 py-3">{{ $event->price }}</td>
+                                    <td class="px-4 py-3">{{ $event->price }}円</td>
                                 </tr>                                    
                                 @endforeach
 
                             </tbody>
                         </table>
-                        {{ $events->links() }}
+                        <div class="mt-7">
+                            {{ $events->links() }}
                         </div>
-                        <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
                         </div>
                     </div>
                     </section>
