@@ -48,23 +48,34 @@
                             {{ $calendars }}
                         </a>
                         {{-- イベントのある日付を取得 --}}
-                            @foreach ($events as $event)
-                                @if ($event->date == $now. "-" . $calendars)
-                                    <div class="absolute text-blue-500 text-xs">
-                                        <br>{{ $event->price }}
-                                    </div>
-                                @endif
-                            @endforeach
-                            
-                    </td>
 
-                        @endforeach
+
+                    @foreach ($numberOfPeople as $numberOfPeoples)
+                        @if ( $numberOfPeoples->date == $now . "-" . $calendars)
+                            <div>
+                                <br>{{ $numberOfPeoples->number }}人
+                            </div>
+                        @endif
+                    @endforeach
+                        
+                    {{-- 日付ごとの合計金額を取得 --}}
+                    @foreach ($eventsSum as $eventsSums)                    
+                        @if ( $eventsSums->date == $now . "-" . $calendars)
+                            <div>
+                                {{ $eventsSums->sum_price }}円
+                            </div>
+                        @endif
+                    @endforeach
+
+
+                    </td>
+                        
+            @endforeach
                     </tr>
-                    
                 </table>    
                 
-                
-                {{ $eventsSum }}
+                {{ $numberOfPeople }}
+                {{-- {{ $eventsSum }} --}}
 
 
 </div>

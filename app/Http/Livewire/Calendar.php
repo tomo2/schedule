@@ -29,6 +29,7 @@ class Calendar extends Component
     public $events;
     public $eventsId;
     public $eventsSum;
+    public $numberOfPeople;
 
     public $currentMonth;
     public $day;
@@ -78,12 +79,19 @@ class Calendar extends Component
         
 
         // DBの値を取得
-
         $this->events = Event::get();
         $this->eventsId = Event::select('date')->get();
-        
+        // 日付ごとに料金をまとめる
+        $this->eventsSum = Event::select('date')
+                            ->selectRaw('sum(price) as sum_price')
+                            ->groupBy('date')
+                            ->get();
 
-        $this->eventsSum = Event::pluck('price');
+        $this->numberOfPeople = Event::select('date')
+                                ->selectRaw('count(id) as number')
+                                ->groupBy('date')
+                                ->get();
+
 
     }
 
@@ -132,6 +140,16 @@ class Calendar extends Component
 
         $this->calendar = array_merge($this->lastMonth, $this->currentMonth, $this->nextMonth);
         
+
+        // DBの値を取得
+        $this->events = Event::get();
+        $this->eventsId = Event::select('date')->get();
+        // 日付ごとに料金をまとめる
+        $this->eventsSum = Event::select('date')
+                            ->selectRaw('sum(price) as sum_price')
+                            ->groupBy('date')
+                            ->get();
+
     }
     
 
@@ -175,6 +193,17 @@ class Calendar extends Component
         }
 
         $this->calendar = array_merge($this->lastMonth, $this->currentMonth, $this->nextMonth);
+
+
+        // DBの値を取得
+        $this->events = Event::get();
+        $this->eventsId = Event::select('date')->get();
+        // 日付ごとに料金をまとめる
+        $this->eventsSum = Event::select('date')
+                            ->selectRaw('sum(price) as sum_price')
+                            ->groupBy('date')
+                            ->get();
+
     }
 
 
