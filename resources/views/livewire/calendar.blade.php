@@ -27,7 +27,7 @@
 
 
 
-    <table class="text-center mx-auto my-20 calendar-width">
+    <table class="text-center mx-auto my-20">
         <tr>
             <th class="calendar bg-slate-200">日</th>
             <th class="calendar bg-slate-200">月</th>
@@ -52,7 +52,7 @@
 
                     @foreach ($numberOfPeople as $numberOfPeoples)
                         @if ( $numberOfPeoples->date == $now . "-" . $calendars)
-                            <div>
+                            <div class="text-xs">
                                 <br>{{ $numberOfPeoples->number }}人
                             </div>
                         @endif
@@ -61,7 +61,7 @@
                     {{-- 日付ごとの合計金額を取得 --}}
                     @foreach ($eventsSum as $eventsSums)                    
                         @if ( $eventsSums->date == $now . "-" . $calendars)
-                            <div>
+                            <div class="text-xs">
                                 {{ $eventsSums->sum_price }}円
                             </div>
                         @endif
