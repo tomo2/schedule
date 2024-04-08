@@ -150,6 +150,10 @@ class Calendar extends Component
                             ->groupBy('date')
                             ->get();
 
+                            $this->numberOfPeople = Event::select('date')
+                            ->selectRaw('count(id) as number')
+                            ->groupBy('date')
+                            ->get();
     }
     
 
@@ -204,6 +208,10 @@ class Calendar extends Component
                             ->groupBy('date')
                             ->get();
 
+                            $this->numberOfPeople = Event::select('date')
+                            ->selectRaw('count(id) as number')
+                            ->groupBy('date')
+                            ->get();
     }
 
 
