@@ -22,8 +22,14 @@ class EventController extends Controller
         ->orderBy('date', 'asc')
         ->paginate(10);
 
+        // 名前でまとめる
+        $eventsName = DB::table('events')
+        ->select('name', 'date')
+        ->groupBy('name', 'date')
+        ->get();
+
         return view('manager.events.index', 
-        compact('events'));
+        compact('events', 'eventsName'));
     }
 
 
@@ -59,8 +65,10 @@ class EventController extends Controller
         // $start_time = $event->start_time;
         // $end_time = $event->end_time;
 
+        $user = Event::where('name', $event->name)->get();
+
         return view('manager.events.show', 
-        compact('event'));
+        compact('event', 'user'));
     }
 
 
