@@ -41,12 +41,18 @@
                                 </tr>                                    
                                 @endforeach
                                 
-                                                            {{-- @foreach ($eventsName as $eventsNames)
-                                                            <tr>
-                                                                <td class="px-4 py-3">{{ $eventsNames->name }}</td>
-                                                                <td class="px-4 py-3">{{ $eventsNames->date }}</td>
-                                                            </tr>
-                                                            @endforeach --}}
+                                @foreach ($eventsName as $eventsNames)
+                                @if ($eventsNames->name)
+                                
+                                @endif
+                                <tr>
+                                    <td class="px-4 py-3">
+                                        <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
+                                        {{ $eventsNames->name }}
+                                    </a>
+                                    </td>
+                                </tr>
+                                @endforeach
 
                             </tbody>
                         </table>

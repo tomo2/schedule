@@ -23,10 +23,15 @@ class EventController extends Controller
         ->paginate(10);
 
         // 名前でまとめる
+
         $eventsName = DB::table('events')
-        ->select('name', 'date')
-        ->groupBy('name', 'date')
+        ->select('name', 'id')
+        ->groupBy('name', 'id')
         ->get();
+
+        // $eventsName = DB::table('events')
+        // ->groupBy('name')
+        // ->get('name');
 
         return view('manager.events.index', 
         compact('events', 'eventsName'));
