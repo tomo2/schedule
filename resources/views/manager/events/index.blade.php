@@ -30,29 +30,31 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach ($events as $event)
+                                {{-- @foreach ($events as $event)
                                 <tr>
                                     <td class="text-center text-blue-400 px-4 py-3"><a href="{{ route('events.show', [ 'event' => $event->id ])}}">{{ $event->name }}</td></a>
                                     <td class="text-center px-4 py-3">{{ $event->care }}</td>
-                                    {{-- <td class="px-4 py-3">{{ $event->date }}</td> --}}
-                                    {{-- <td class="px-4 py-3">{{ $event->start_time }}</td> --}}
-                                    {{-- <td class="px-4 py-3">{{ $event->end_time }}</td> --}}
+                                    <td class="px-4 py-3">{{ $event->date }}</td>
+                                    <td class="px-4 py-3">{{ $event->start_time }}</td>
+                                    <td class="px-4 py-3">{{ $event->end_time }}</td>
                                     <td class="text-center px-4 py-3">{{ $event->price }}円</td>
                                 </tr>                                    
-                                @endforeach
+                                @endforeach --}}
                                 
-                                @foreach ($eventsName as $eventsNames)
-                                @if ($eventsNames->name)
-                                
-                                @endif
+                                {{-- 同じ名前のデータは一つだけ表示する --}}
                                 <tr>
-                                    <td class="px-4 py-3">
+                                    
+                                @foreach ($events->unique('name') as $event)
+                                    <td class="text-center text-blue-400 px-4 py-3">
                                         <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
-                                        {{ $eventsNames->name }}
-                                    </a>
+                                            {{ $event->name }}
+                                        </a>
                                     </td>
+                                    @endforeach
                                 </tr>
-                                @endforeach
+
+                                
+
 
                             </tbody>
                         </table>
