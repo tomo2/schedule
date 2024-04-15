@@ -20,7 +20,7 @@ class EventController extends Controller
         // イベントテーブルをイベント管理に渡す
         $events = DB::table('events')
         ->orderBy('date', 'asc')
-        ->paginate(15);
+        ->paginate(40);
 
         // 名前でまとめる
 

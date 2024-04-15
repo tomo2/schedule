@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            イベント管理
+            利用者情報
         </h2>
     </x-slot>
 
@@ -18,18 +18,17 @@
                             @endif
                         <button onclick="location.href='{{ route('events.create') }}'" class="flex mb-4 ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">新規登録</button>
                         <div class="w-full mx-auto overflow-auto">
-                        <table class="table-auto w-4/5 mx-auto whitespace-no-wrap">
-                            <thead>
+                        <table class="table-auto w-4/5 mx-auto my-4 whitespace-no-wrap">
                             <tr>
+                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
+                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th>
                                 {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">利用日</th> --}}
                                 {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">開始時間</th> --}}
                                 {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th> --}}
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">一回当たりの料金</th>
+                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">一回当たりの料金</th> --}}
                             </tr>
-                            </thead>
-                            <tbody>
                                 {{-- @foreach ($events as $event)
                                 <tr>
                                     <td class="text-center text-blue-400 px-4 py-3"><a href="{{ route('events.show', [ 'event' => $event->id ])}}">{{ $event->name }}</td></a>
@@ -43,20 +42,24 @@
                                 
                                 {{-- 同じ名前のデータは一つだけ表示する --}}
                                 <tr>
+
                                     
-                                @foreach ($events->unique('name') as $event)
-                                    <td class="text-center text-blue-400 px-4 py-3">
-                                        <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
-                                            {{ $event->name }}
-                                        </a>
-                                    </td>
+                                @foreach ($events->unique('name') as $key => $event)
+
+                                    @if($key % 2 == 0)
+                                        </tr><tr>
+                                    @endif
+                                        <td class="text-center text-blue-400 px-4 py-3">
+                                            <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
+                                                {{ $event->name }}
+                                            </a>
+                                        </td>
+                                        <td class="text-center px-4 py-3">
+                                            {{ $event->care }}
+                                        </td>
                                     @endforeach
+
                                 </tr>
-
-                                
-
-
-                            </tbody>
                         </table>
                         <div class="mt-7">
                             {{ $events->links() }}
