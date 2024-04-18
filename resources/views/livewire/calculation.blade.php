@@ -115,7 +115,7 @@
 
                 <div class="mx-auto w-1/3 mt-4">
                     <x-label for="price" value="料金" />
-                    <x-input value="{{ floor($price) }}" id="price" class="block mt-1 w-full" type="text" name="price" required />
+                    <x-input value="{{ floor($price) }}" id="price" class=" mt-1 w-4/5" type="text" name="price" required />円
                 </div>
 
                 <div class="mt-8 mx-auto w-1/6">
