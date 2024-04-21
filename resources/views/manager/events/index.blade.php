@@ -42,23 +42,45 @@
                                 
                                 {{-- 同じ名前のデータは一つだけ表示する --}}
                                 <tr>
-
                                     
+                                {{-- @foreach ($events->unique('name') as $key => $event) --}}
                                 @foreach ($events->unique('name') as $key => $event)
 
                                     @if($key % 2 == 0)
                                         </tr><tr>
                                     @endif
-                                        <td class="text-center text-blue-400 px-4 py-3">
+
+                                        <td class="border-2 border-gray-200 text-center text-blue-400 px-4 py-3">
                                             <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
+                                                {{ $event->id }}
                                                 {{ $event->name }}
                                             </a>
                                         </td>
-                                        <td class="text-center px-4 py-3">
+
+                                        <td class="border-2 border-gray-200 text-center px-4 py-3">
                                             {{ $event->care }}
                                         </td>
-                                    @endforeach
 
+                                    {{-- @endif --}}
+
+                                @endforeach
+                                </tr>
+
+
+                                {{-- @foreach ($events->unique('name') as $key => $event)
+
+                                @if($key % 2 == 0)
+                                    </tr><tr>
+                                @endif
+                                    <td class="border-2 border-gray-200 text-center text-blue-400 px-4 py-3">
+                                        <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
+                                            {{ $event->name }}
+                                        </a>
+                                    </td>
+                                    <td class="border-2 border-gray-200 text-center px-4 py-3">
+                                        {{ $event->care }}
+                                    </td>
+                            @endforeach --}}
                                 </tr>
                         </table>
                         <div class="mt-7">

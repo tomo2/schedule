@@ -19,19 +19,20 @@ class EventController extends Controller
     {
         // イベントテーブルをイベント管理に渡す
         $events = DB::table('events')
-        ->orderBy('date', 'asc')
+        ->orderBy('id', 'asc')
         ->paginate(40);
 
         // 名前でまとめる
 
-        $eventsName[] = DB::table('events')
-        // ->select('id', 'name')
-        // ->selectRaw('sum(name) as group' )
-        // ->groupBy('name')
-        ->get('name');
+        $eventsName = DB::table('events')
+        ->distinct(['name'])
+        ->orderBy('name', 'asc')
+        ->paginate(40);
+
+        // dd($eventsName, $events);
 
         return view('manager.events.index', 
-        compact('events'));
+        compact('events', 'eventsName'));
     }
 
 

@@ -17,7 +17,7 @@
                     </x-nav-link>
                     @can('admin')
                     <x-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
-                        イベント管理
+                        利用者情報
                     </x-nav-link>
                     @endcan
                 </div>
@@ -145,9 +145,10 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 カレンダー
             </x-responsive-nav-link>
+        {{-- adminでログインしていたら表示 --}}
             @can('admin')
             <x-responsive-nav-link href="{{ route('events.index') }}" :active="request()->routeIs('events.index')">
-                イベント管理
+                利用者情報
             </x-responsive-nav-link>
             @endcan
         </div>

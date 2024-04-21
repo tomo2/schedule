@@ -1,33 +1,23 @@
 <div>
-    <div class="text-centerv text-sm">
+    {{-- <div class="text-centerv text-sm">
         日付を選択して下さい。
-    </div>
+    </div> --}}
 
-    {{-- 日付選択 --}}
-    {{-- <input id="calendar" class="block mt-1 mx-auto" 
-    type="text" name="calendar" 
-    value="{{ $currentDate }}"
-    wire:change="getDate($event.target.value)"  /> --}}
+    {{-- 年月、切り替えボタン --}}
+    <section class="text-center pt-16">
+        <button wire:click="lastMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+            <<
+        </button>
+        <span class="text-xl px-8">
+            {{ $now }}
+        </span>
+        <button wire:click="nextMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+            >>
+        </button>
+    </section>
 
-
-<section class="text-center pt-8">
-    <button wire:click="lastMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-        <<
-    </button>
-
-    {{ $now }}
-
-    <button wire:click="nextMonth" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-        >>
-    </button>
-</section>
-
-
-{{-- {{ $events }} --}}
-
-
-
-    <table class="text-center mx-auto my-20">
+    {{-- カレンダー --}}
+    <table class="table-fixed w-11/12 text-center mx-auto my-10">
         <tr>
             <th class="calendar bg-slate-200">日</th>
             <th class="calendar bg-slate-200">月</th>
@@ -42,40 +32,34 @@
                 @if($key % 7 == 0)
                     </tr><tr>
                 @endif
-
-                    <td class="hover:bg-gray-200 text-gray-800 font-semibold py-8 px-14 border border-gray-400 rounded shadow">
-                        <a class="text-red-400 text-xl" href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}"> 
+                        {{-- px抜き --}}
+                <td class="hover:bg-gray-200 text-gray-800 font-semibold py-8 border border-gray-400 rounded shadow">
+                    <a href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}"> 
+                        <span class="text-blue-500 text-xl">
                             {{ $calendars }}
-                        </a>
+                        </span>
+                        
                         {{-- イベントのある日付を取得 --}}
-
-
-                    @foreach ($numberOfPeople as $numberOfPeoples)
+                        @foreach ($numberOfPeople as $numberOfPeoples)
                         @if ( $numberOfPeoples->date == $now . "-" . $calendars)
-                            <div class="text-xs">
-                                <br>{{ $numberOfPeoples->number }}人
-                            </div>
+                        <span class="text-xs bg-red-200">
+                            <br>{{ $numberOfPeoples->number }}人<br>
+                        </span>
                         @endif
-                    @endforeach
+                        @endforeach
                         
-                    {{-- 日付ごとの合計金額を取得 --}}
-                    @foreach ($eventsSum as $eventsSums)                    
+                        {{-- 日付ごとの合計金額を取得 --}}
+                        @foreach ($eventsSum as $eventsSums)                    
                         @if ( $eventsSums->date == $now . "-" . $calendars)
-                            <div class="text-xs">
-                                {{ $eventsSums->sum_price }}円
-                            </div>
+                        <span class="text-xs bg-green-200">
+                            {{ $eventsSums->sum_price }}円
+                        </span>
                         @endif
-                    @endforeach
-
-
-                    </td>
-                        
+                        @endforeach
+                    </a>
+                </td>
             @endforeach
-                    </tr>
-                </table>    
-                
-                {{ $numberOfPeople }}
-                {{-- {{ $eventsSum }} --}}
-
+                </tr>
+        </table>
 
 </div>
