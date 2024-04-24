@@ -44,7 +44,15 @@
                                         <td class="text-center px-4 py-3"><x-button class="">編集する</x-button></td>
                                     </tr>                                                                
                                 </form>
-                        @endforeach
+                                
+                                <form method="post" action="{{ route('events.destroy', ['event' => $users->id ]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <tr>
+                                        <td class="text-center px-4 py-3"><x-button class="">削除する</x-button></td>
+                                    </tr>                                                                
+                                </form>
+                                @endforeach
                     </tbody>
                 </table>
             </div>
