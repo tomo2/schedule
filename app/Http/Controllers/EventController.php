@@ -100,14 +100,15 @@ class EventController extends Controller
         return to_route('events.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(Event $event)
     {
-        //
+        // $events = Event::find($event);
+        $events = Event::where('id', $event->id)->first();
+        
+        // dd($events, $event);
+        $events->delete();
+
+        return to_route('events.index');
     }
 }

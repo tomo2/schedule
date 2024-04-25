@@ -20,61 +20,12 @@
                         {{ session('status') }}
                     </div>
                 @endif
-        
-                {{-- nameでflatpickrを利用 --}}
-                
-                {{-- @if ($events)
-                
-                @foreach ($events as $event)
-                <form method="form" action="{{ route('events.reserve', ['id' => $event->id ]) }}">
-                    @csrf
-                        <div class="md:flex justify-around p-2 m-5 border border-blue-500">
-                            <div>
-                                <x-label for="name" value="名前" />
-                                {{ $event->name }}
-                            </div>
-                                <div class="mt-4">
-                                    <x-label for="care" value="care" />
-                                    {{ $event->care }}
-                                </div>
-    
-                                <div class="mt-4">
-                                    <x-label for="date" value="利用日" />
-                                    {{ $event->date }}
-                                </div>
-                                
-                                <div class="mt-4">
-                                    <x-label for="start_time" value="開始時間" />
-                                    {{ $event->start_time }}
-                                </div>
-                                <div class="mt-4">
-                                    <x-label for="end_time" value="終了時間" />
-                                    {{ $event->end_time}}
-                                </div>
-                            </div>
 
-                            <input type="hidden" name="id" value="{{ $event->id }}">
-                        </form>
-                        @endforeach
-                        
-                        @else
-                        
-                        @endif
-                        
-                        <x-button class="ml-4 mt-4">
-                            編集する
-                        </x-button>
-                </form> --}}
-
-
-                {{-- <div class="py-4">
-                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"> --}}
                             <section class="text-gray-600 body-font">
                                 <div class="container px-5 py-8 mx-auto">
             
                                     <button onclick="location.href='{{ route('events.create') }}'" class="flex mb-4 ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">新規登録</button>
-                                    <div class="w-full mx-auto overflow-auto">
+                                    <div class="w-3/4 mx-auto overflow-auto">
                                     <table class="table-auto w-full text-left whitespace-no-wrap">
                                         <thead>
                                         <tr>
@@ -83,7 +34,7 @@
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">利用日</th>
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">開始時間</th>
                                             <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th>
-                                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">料金(後ほど)</th>
+                                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">料金</th>
                                         </tr>
                                         </thead>
                                         <tbody>

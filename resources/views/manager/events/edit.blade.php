@@ -31,8 +31,19 @@
 
                             <div class="mt-4">
                                 <x-label for="care" value="介護度" />
-                                <x-input value="{{ $event->care }}" id="care" class=" block mt-1 w-1/3" type="text" name="care" required />
+                                <select name="care" class="block mt-1 w-1/3" type="text" name="start_time" required >
+                                    <option value="1" @if ($event->care == 1) selected @endif>1</option>
+                                    <option value="2" @if ($event->care == 2) selected @endif>2</option>
+                                    <option value="3" @if ($event->care == 3) selected @endif>3</option>
+                                    <option value="4" @if ($event->care == 4) selected @endif>4</option>
+                                    <option value="5" @if ($event->care == 5) selected @endif>5</option>
+                                </select>
                             </div>
+
+
+
+
+
 
                             <div class="mt-4">
                                 <x-label for="date" value="利用日" />

@@ -25,7 +25,7 @@ class EventFactory extends Factory
             'date' => $dummyDate->format('Y-m-d'),
             'start_time' => $dummyDate->format('H:i:s'),
             'end_time' => $dummyDate->modify('+3hour')->format('H:i:s'),
-            'price' => $this->faker->numberBetween(1, 5),
+            'price' => $this->faker->numberBetween(3944, 4137, 6078, 6288, 7021, 7139),
 
         ];
     }
