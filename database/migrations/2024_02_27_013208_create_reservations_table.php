@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('event_id')->constrained()->onUpdate('cascade');
+            // $table->foreignId('user_id')->constrained()->onUpdate('cascade');
+            // $table->foreignId('event_id')->constrained()->onUpdate('cascade');
             $table->datetime('canceled_date')->nullable();
             $table->timestamps();
         });

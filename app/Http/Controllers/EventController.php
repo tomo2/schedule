@@ -109,6 +109,8 @@ class EventController extends Controller
         // dd($events, $event);
         $events->delete();
 
+        session()->flash('status', '削除しました');
+
         return to_route('events.index');
     }
 }
