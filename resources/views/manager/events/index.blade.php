@@ -12,7 +12,7 @@
                     <div class="container px-5 py-8 mx-auto">
                         {{-- sessionメッセージ --}}
                         @if (session('status'))
-                            <div class="mb-4 font-medium text-sm text-green-600">
+                            <div class="mb-4 font-medium text-xl text-red-600">
                                 {{ session('status') }}
                                 </div>
                             @endif

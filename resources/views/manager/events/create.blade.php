@@ -11,10 +11,10 @@
                 <div class="max-w-2x1 mx-auto">
                 <x-validation-errors class="mb-4" />
     
-                @if (session('status'))
-                    <div class="mb-4 font-medium text-sm text-green-600">
-                        {{ session('status') }}
-                    </div>
+                    @if (session('status'))
+                        <div class="mb-4 font-medium text-sm text-green-600">
+                            {{ session('status') }}
+                        </div>
                     @endif
                     
                     <form method="POST" action="{{ route('events.store') }}">
@@ -24,7 +24,6 @@
                     <div class="mt-12">
                         <x-label for="name" value="名前" />
                         <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-    
                     </div>
     
                         <div class="mt-4">
