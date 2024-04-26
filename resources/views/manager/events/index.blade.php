@@ -22,68 +22,35 @@
                             <tr>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th>
-                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">利用日</th> --}}
-                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">開始時間</th> --}}
-                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">終了時間</th> --}}
-                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">一回当たりの料金</th> --}}
+                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
+                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th> --}}
                             </tr>
-                                {{-- @foreach ($events as $event)
-                                <tr>
-                                    <td class="text-center text-blue-400 px-4 py-3"><a href="{{ route('events.show', [ 'event' => $event->id ])}}">{{ $event->name }}</td></a>
-                                    <td class="text-center px-4 py-3">{{ $event->care }}</td>
-                                    <td class="px-4 py-3">{{ $event->date }}</td>
-                                    <td class="px-4 py-3">{{ $event->start_time }}</td>
-                                    <td class="px-4 py-3">{{ $event->end_time }}</td>
-                                    <td class="text-center px-4 py-3">{{ $event->price }}円</td>
-                                </tr>                                    
-                                @endforeach --}}
                                 
                                 {{-- 同じ名前のデータは一つだけ表示する --}}
 
-                                <tr>
-                                    @foreach ($eventsName->unique('name') as $key => $event)
-
-                                        {{-- @if($loop->iteration % 2 === 0) --}}
-                                        @if ($key % 2 === 0)
-                                            </tr><tr>
-                                        {{-- @elseif($key == 1) --}}
-                                            {{-- </tr><tr> --}}
-                                        @endif
-                                        
+                                @foreach ($eventsName->unique('name') as $key => $event)
+                                
+                                {{-- @if ($key % 2 === 0)
+                                </tr><>
+                                    @endif --}}
+                                    
+                                    <tr>
                                         <td class="border-2 border-gray-200 text-center text-blue-400 px-4 py-3">
                                             <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
                                                 {{ $event->id }}
                                                 {{ $event->name }}
-                                                {{ $key }}
                                             </a>
                                         </td>
                                         
                                         <td class="border-2 border-gray-200 text-center px-4 py-3">
                                             {{ $event->care }}
                                         </td>
+                                    </tr>
                                                                             
                                     @endforeach
-                                </tr>
-
-
-                                {{-- @foreach ($events->unique('name') as $key => $event)
-
-                                @if($key % 2 == 0)
-                                    </tr><tr>
-                                @endif
-                                    <td class="border-2 border-gray-200 text-center text-blue-400 px-4 py-3">
-                                        <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
-                                            {{ $event->name }}
-                                        </a>
-                                    </td>
-                                    <td class="border-2 border-gray-200 text-center px-4 py-3">
-                                        {{ $event->care }}
-                                    </td>
-                            @endforeach --}}
-                                </tr>
                         </table>
+
+                        
                         <div class="mt-7">
                             {{ $events->links() }}
                         </div>

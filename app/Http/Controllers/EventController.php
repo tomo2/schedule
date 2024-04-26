@@ -28,7 +28,13 @@ class EventController extends Controller
         ->distinct('name')
         ->paginate(40);
 
-        // dd($eventsName, $events)
+
+        // $sum = DB::table('events')
+        // ->select('name')
+        // ->groupBy('name')
+        // ->get();
+
+        // dd($sum);
 
         return view('manager.events.index', 
         compact('events', 'eventsName'));

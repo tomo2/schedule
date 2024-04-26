@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         
         // ダミーデータを100個作成
-        Event::factory(100)->create();
+        Event::factory(300)->create();
 
         $this->call([
             UserSeeder::class,
