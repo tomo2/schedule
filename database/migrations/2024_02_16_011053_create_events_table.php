@@ -21,6 +21,7 @@ return new class extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->integer('price');
+            $table->integer('user_id');
             
             $table->timestamps();
         });

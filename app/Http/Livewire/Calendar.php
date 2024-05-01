@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Carbon\Carbon;
 use App\Models\Event;
+use Illuminate\Support\Facades\Auth;
 
 class Calendar extends Component
 {
@@ -37,6 +38,7 @@ class Calendar extends Component
     public $nextMonth;
     public $calendar;
 
+    public $user;
 
     // 初期画面
     public function mount()
@@ -92,6 +94,8 @@ class Calendar extends Component
                                 ->groupBy('date')
                                 ->get();
 
+
+        $this->user = Auth::user();
 
     }
 
