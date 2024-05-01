@@ -15,10 +15,8 @@
             >>
         </button>
     </section>
-{{-- 
-    @foreach ($eventsSum as $eventsSums)
-    {{ $eventsSums->sum_price }}
-    @endforeach --}}
+
+    {{ $user}}
 
     {{-- カレンダー --}}
     <table class="table-fixed w-11/12 text-center mx-auto my-10">
