@@ -7,6 +7,8 @@ use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+
 
 class EventController extends Controller
 {
@@ -43,8 +45,10 @@ class EventController extends Controller
 
     public function create()
     {
+        $user = Auth::id();
         
-        return view('manager.events.create');
+        return view('manager.events.create',
+        compact('user'));
     }
 
 
@@ -58,6 +62,7 @@ class EventController extends Controller
             'start_time' => $request['start_time'],
             'end_time' => $request['end_time'],
             'price' => $request['price'],
+            'user_id' => $request['user_id'],
         ]);
 
         session()->flash('status', '登録okです');

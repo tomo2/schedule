@@ -16,7 +16,9 @@
         </button>
     </section>
 
-    {{ $user}}
+    {{ $user }}
+
+
 
     {{-- カレンダー --}}
     <table class="table-fixed w-11/12 text-center mx-auto my-10">
