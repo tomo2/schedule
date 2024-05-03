@@ -79,23 +79,25 @@ class Calendar extends Component
         $this->calendar = array_merge($this->lastMonth, $this->currentMonth, $this->nextMonth);
         
         
-
+        
         // DBの値を取得
+        $this->user = Auth::user();
         $this->events = Event::get();
         $this->eventsId = Event::select('date')->get();
         // 日付ごとに料金をまとめる
         $this->eventsSum = Event::select('date')
+                            ->where('user_id', '=', $this->user->id)
                             ->selectRaw('sum(price) as sum_price')
                             ->groupBy('date')
                             ->get();
 
+        // 予約人数の合計
         $this->numberOfPeople = Event::select('date')
+                                ->where('user_id', '=', $this->user->id)
                                 ->selectRaw('count(id) as number')
                                 ->groupBy('date')
                                 ->get();
 
-
-        $this->user = Auth::user();
 
     }
 
@@ -150,11 +152,13 @@ class Calendar extends Component
         $this->eventsId = Event::select('date')->get();
         // 日付ごとに料金をまとめる
         $this->eventsSum = Event::select('date')
+                            ->where('user_id', '=', $this->user->id)
                             ->selectRaw('sum(price) as sum_price')
                             ->groupBy('date')
                             ->get();
-
-                            $this->numberOfPeople = Event::select('date')
+        // 予約人数の合計
+        $this->numberOfPeople = Event::select('date')
+                            ->where('user_id', '=', $this->user->id)
                             ->selectRaw('count(id) as number')
                             ->groupBy('date')
                             ->get();
@@ -208,11 +212,13 @@ class Calendar extends Component
         $this->eventsId = Event::select('date')->get();
         // 日付ごとに料金をまとめる
         $this->eventsSum = Event::select('date')
+                            ->where('user_id', '=', $this->user->id)
                             ->selectRaw('sum(price) as sum_price')
                             ->groupBy('date')
                             ->get();
-
-                            $this->numberOfPeople = Event::select('date')
+        // 予約人数の合計
+        $this->numberOfPeople = Event::select('date')
+                            ->where('user_id', '=', $this->user->id)
                             ->selectRaw('count(id) as number')
                             ->groupBy('date')
                             ->get();
