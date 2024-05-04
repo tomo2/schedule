@@ -22,7 +22,7 @@ return new class extends Migration
             $table->time('end_time');
             $table->integer('price');
             // $table->integer('user_id');
-            $table->string('user_id');
+            $table->unsignedBigInteger('user_id');
             
             $table->timestamps();
         });

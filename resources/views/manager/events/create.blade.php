@@ -118,15 +118,15 @@
                             <td><x-button2 type="button" value="1162" onclick="number(1162)">要介護5 8~9時間</x-button2></td>
                         </tr>
                 </table>
-
+{{-- 
                 <div class="mt-4 mx-auto w-1/3">
                     <x-label for="user_id" value="管理者" />
                     <x-input id="user_id" value="{{ $user }}" class="block mt-1 w-full" type="text" name="user_id" required />
-                </div>
+                </div> --}}
 
                 <div class="mx-auto w-1/3 mt-4">
                     <x-label for="price" value="料金" />
-                    <x-input id="price" class="mt-1 w-4/5" type="text" name="price" required />円
+                    <x-input  id="price" class="mt-1 w-4/5" type="text" name="price" required />円
                 </div>
                 
                 <script>
@@ -137,7 +137,7 @@
                 </script>
 
                     {{-- 利用者登録したユーザーの情報を登録する --}}
-                    {{-- <input type="text" name="user_id" id="user_id" value="1" required /> --}}
+                    <input type="hidden" name="user_id" id="user_id" value="{{ $user }}" required />
 
 
                     <div class="mt-8 mx-auto w-1/6">
