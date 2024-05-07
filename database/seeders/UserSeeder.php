@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
                 'name' => 'common',
                 'email' => 'common@common.com',
                 'password' => Hash::make('password123'),
-                'role' => 2,
+                'role' => 1,
             ],
 
         ]);

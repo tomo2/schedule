@@ -30,6 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
 
+        //現在使用なし
         Gate::define('common', function($user){
             return $user->role > 0;
 
