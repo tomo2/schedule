@@ -25,10 +25,10 @@
                             <tr>
                                 {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th> --}}
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">利用日</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">開始時間</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">終了時間</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">一回当たりの料金</th>
+                                <th class="px-4 py-3 title-font tracking-wider  text-gray-900 text-sm bg-gray-200">利用日</th>
+                                <th class="px-4 py-3 title-font tracking-wider text-gray-900 text-sm bg-gray-200">開始時間</th>
+                                <th class="px-4 py-3 title-font tracking-wider text-gray-900 text-sm bg-gray-200">終了時間</th>
+                                <th class="px-4 py-3 title-font tracking-wider text-gray-900 text-sm bg-gray-200">一回当たりの料金</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,24 +37,26 @@
                                     <tr>
                                         {{-- <td class="text-center text-blue-400 px-4 py-3">{{ $event->name }}</td>
                                         <td class="text-center px-4 py-3">{{$users->care }}</td> --}}
-                                        <td class="text-center px-4 py-3">{{ $users->date }}</td>
-                                        <td class="text-center px-4 py-3">{{ $users->start_time }}</td>
-                                        <td class="text-center px-4 py-3">{{ $users->end_time }}</td>
-                                        <td class="text-center px-4 py-3">{{ $users->price }}円</td>
-                                        <td class="text-center px-4 py-3"><x-button class="">編集する</x-button></td>
-                                    </tr>                                                                
+                                        <td class="text-center px-4 py-3 font-bold">{{ $users->date }}</td>
+                                        <td class="text-center px-4 py-3 font-bold">{{ $users->start_time }}</td>
+                                        <td class="text-center px-4 py-3 font-bold">{{ $users->end_time }}</td>
+                                        <td class="text-center px-4 py-3 font-bold">{{ $users->price }}円</td>
+                                        <td class="text-center px-4 py-3 font-bold"><button class="px-4 py-1 rounded-md bg-green-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-green-500">編集する</button></td>
+                                    {{-- </tr>                                                                 --}}
                                 </form>
                                 
                                 <form method="post" action="{{ route('events.destroy', ['event' => $users->id ]) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <tr>
-                                        <td class="text-center px-4 py-3"><x-button class="">削除する</x-button></td>
+                                    {{-- <tr> --}}
+                                        <td class="text-center px-4 py-3"><button class="px-4 py-1 rounded-md bg-red-500 text-white font-bold transition duration-200 hover:bg-white hover:text-black border-2 border-transparent hover:border-red-500">
+                                            削除する</button></td>
                                     </tr>                                                                
                                 </form>
+                                
                                 @endforeach
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
             </div>
             </div>
         </div>

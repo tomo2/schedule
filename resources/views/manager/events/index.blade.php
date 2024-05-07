@@ -20,10 +20,8 @@
                         <div class="w-full mx-auto overflow-auto">
                         <table class="table-auto w-4/5 mx-auto my-4 whitespace-no-wrap">
                             <tr>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th>
-                                {{-- <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-200">名前</th>
-                                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-300">介護度</th> --}}
+                                <th class="px-4 py-3 title-font tracking-wider text-gray-900 text-sm bg-gray-200">名前</th>
+                                <th class="px-4 py-3 title-font tracking-wider text-gray-900 text-sm bg-gray-300">介護度</th>
                             </tr>
                                 
                                 {{-- 同じ名前のデータは一つだけ表示する --}}
@@ -35,14 +33,14 @@
                                     @endif --}}
                                     
                                     <tr>
-                                        <td class="border-2 border-gray-200 text-center text-blue-400 px-4 py-3">
+                                        <td class="border-2 font-bold border-gray-200 text-center text-blue-400 px-4 py-3">
                                             <a href="{{ route('events.show', [ 'event' => $event->id ])}}">
                                                 {{ $event->id }}
                                                 {{ $event->name }}
                                             </a>
                                         </td>
                                         
-                                        <td class="border-2 border-gray-200 text-center px-4 py-3">
+                                        <td class="border-2 font-bold border-gray-200 text-center px-4 py-3">
                                             {{ $event->care }}
                                         </td>
                                     </tr>
