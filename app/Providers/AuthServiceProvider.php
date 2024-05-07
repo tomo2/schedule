@@ -31,7 +31,6 @@ class AuthServiceProvider extends ServiceProvider
 
 
         Gate::define('common', function($user){
-            // return $user->role > 0 && $user->role <= 2;
             return $user->role > 0;
 
         });
