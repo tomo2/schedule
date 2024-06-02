@@ -1,5 +1,5 @@
     
-    <div class="p-12 text-3xl">登録した利用者がカレンダーに表示される</div>
+    {{-- <div class="p-12 text-xl">ユーザー登録しカレンダーに料金を表示させてみよう！！</div> --}}
 
 
     <div>
@@ -49,7 +49,7 @@
                             @if ( $numberOfPeoples->date == $now . "-" . $calendars)
                             <span class="text-xs">
                                 {{-- <br>予約人数：<span class="bg-red-200">{{ $numberOfPeoples->number }}人</span><br> --}}
-                                <br>予約人数：<span class="bg-red-200">2人</span><br>
+                                <br>予約人数：<span class="bg-red-200">1人</span><br>
                             </span>
 
                             @endif
@@ -59,7 +59,7 @@
                             @foreach ($eventsSum as $eventsSums)                    
                             @if ( $eventsSums->date == $now . "-" . $calendars)
                             <span class="text-xs">
-                                料金：<span class="bg-green-200">10000円</span>
+                                料金：<span class="bg-green-200">5113円</span>
                             </span>
                             @endif
                             @endforeach

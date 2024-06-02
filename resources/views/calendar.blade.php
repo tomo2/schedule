@@ -1,8 +1,15 @@
 <x-calendar-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             売り上げ管理アプリ
-        </h2>
+        </h2> --}}
+        <!-- Logo -->
+        <div class="w-40 shrink-0 flex items-center">
+            <a href="{{ route('dashboard') }}">
+                <x-application-mark class="block h-9 w-auto" />
+            </a>
+        </div>
+        <div class="p-4 text-xl">ユーザー登録しカレンダーで利用者管理してみよう</div>
     </x-slot>
 
     <div class="py-12">
