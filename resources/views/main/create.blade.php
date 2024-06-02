@@ -1,6 +1,6 @@
 
                 
-                <div class="p-12 text-3xl">ユーザー登録画面で利用者登録しよう</div>
+                {{-- <div class="p-12 text-3xl">ユーザー登録画面で利用者登録しよう</div> --}}
 
                     {{-- nameでflatpickrを利用 --}}
                     <div class="mx-auto w-2/3">
