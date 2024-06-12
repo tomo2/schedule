@@ -39,7 +39,7 @@
                     @endif
                             {{-- px抜き --}}
                     <td class="hover:bg-gray-200 text-gray-800 font-semibold h-32 border border-gray-400 rounded shadow">
-                        <a href="{{ route('events.detail', ['id' => $now. "-" . $calendars ]) }}"> 
+                        <a href="#"> 
                             <span class="text-blue-500 text-xl">
                                 {{ $calendars }}
                             </span>

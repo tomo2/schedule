@@ -9,16 +9,9 @@
                 <x-application-mark class="block h-9 w-auto" />
             </a>
         </div>
-        <div class="p-4 text-xl">ユーザー登録しカレンダーで利用者管理してみよう</div>
+        <div class="p-4 text-xl">ログインしてカレンダーで利用者管理してみよう</div>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                @include('main.create')
-            </div>
-        </div>
-    </div>
 
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
